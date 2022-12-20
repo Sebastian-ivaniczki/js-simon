@@ -16,6 +16,8 @@ const xmas = setInterval (function (){
     const currentDate = new Date().getTime();
     //  calculate the time between today and Christmas
     const missinTime = countDownDate - currentDate
+    // transform the thousand seconds into days, hours, minutes and seconds
 
-    console.log(missinTime)
+    const days = Math.floor(missinTime / (1000 * 60 * 60 * 24));
+    console.log(days)
 }, 1000);
