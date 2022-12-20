@@ -4,28 +4,18 @@ const hoursElement = document.getElementById('hours');
 const minutesElement = document.getElementById('minutes');
 const secondsElement = document.getElementById('seconds');
 
-//! functions ----------------------------------------
-//create function to take curent date
-const getCurentDate = () =>{
-    const newDate = new Date()
-    //get days 
-    const days = newDate.getDate()
-    //get hours 
-    const hours = newDate.getHours()
-    // get minutes 
-    const minutes = newDate.getMinutes()
-    //get seconds
-    const seconds = newDate.getSeconds()
-    
-    return  {
-        days,
-        hours,
-        minutes,
-        seconds
-      };
 
-}
+// Set the date we're counting down to
 
-const date = getCurentDate()
+const countDownDate = new Date("dec 25, 2022 00:00:00").getTime();
+console.log(countDownDate)
 
-console.log(date.days)
+//create a contdown functio
+
+const xmas = setInterval (function (){
+    const currentDate = new Date().getTime();
+    //  calculate the time between today and Christmas
+    const missinTime = countDownDate - currentDate
+
+    console.log(missinTime)
+}, 1000);
