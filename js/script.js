@@ -18,10 +18,15 @@ const xmas = setInterval (function (){
     const missingTime = countDownDate - currentDate;
     // transform the thousand seconds into days, hours, minutes and seconds
 
-    const days = Math.floor(missingTime / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((missingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes =  Math.floor((missingTime % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((missingTime % (1000 * 60)) / 1000);
+    let days = Math.floor(missingTime / (1000 * 60 * 60 * 24));
+    let hours = Math.floor((missingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    let minutes =  Math.floor((missingTime % (1000 * 60 * 60)) / (1000 * 60));
+    let seconds = Math.floor((missingTime % (1000 * 60)) / 1000);
+    //add a 0 in front of the numbers if they are < 0
+    days = (days < 10) ? "0" + days : days;
+    hours = (hours < 10) ? "0" + hours : hours;
+    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    seconds = (seconds < 10) ? "0" + seconds : seconds;
 
     daysElement.innerText = days;
     hoursElement.innerText = hours;
